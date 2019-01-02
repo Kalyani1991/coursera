@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="LunchStatus">
+  <head>
+    <meta charset="utf-8">
+    <title>Cousera-Lunch Check</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+      <div class = "page-header">   
+        <h1>
+            Assignment 1 - Lunch Checker  
+        </h1>          
+      </div>
+      <div class="container" ng-controller="LunchStatusController">
+        <h1>Lunch Status</h1>
+        <hr>
+        <div class="form-group">
+            <input type="text" ng-model="lunchMenu" placeholder="List lunch dishes you have in comma separated format" style="width:500px;"> 
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="button" ng-click="checkLunchStatus()">Check If Too Much</button>
+        </div>
+        
+        <div ng-show="!empty && checked" class="alert alert-success">{{message}}</div>
+        <div ng-show="empty" class="alert alert-danger">Please enter data first</div>
+      </div>
+  </body>
+</html>
